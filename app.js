@@ -10,4 +10,27 @@
 // sharing your realtime location, you will have to save it and read it every few seconds from an external database (ex. Firebase)
 // displaying the realtime location of your friend when he accesses the page
 
-const KEY = AIzaSyCe1ODd - Y87NWxGnrr_dMXat0N1mk9RYis;
+const shareBtn = document.querySelector('.share');
+
+const KEY = 'AIzaSyCe1ODd - Y87NWxGnrr_dMXat0N1mk9RYis';
+
+const errorHandler = (err) => {
+	if (err.code !== 0) {
+		console.log('problem');
+	}
+};
+
+const showLocation = (data) => {
+	console.log(data);
+};
+
+const options = { timeout: 30000 };
+const getLocation = () => {
+	navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+};
+
+const handleClick = () => {
+	console.log('test');
+};
+
+shareBtn.addEventListener('click', getLocation);
