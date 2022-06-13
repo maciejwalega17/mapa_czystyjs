@@ -31,14 +31,14 @@ const showLocation = (data) => {
 	console.log(longitude);
 };
 
-const options = { timeout: 30000 };
+const options = { timeout: 30000, enableHighAccuracy: true };
 const getLocation = () => {
 	navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
 };
 
 //stuff from google maps api
-const handleClick = () => {
-    getLocation();
+const handleLoadMap = () => {
+	getLocation();
 	let script = document.createElement('script');
 	script.src = `https://maps.googleapis.com/maps/api/js?key=${KEY}&callback=initMap`;
 	script.async = true;
@@ -56,5 +56,5 @@ const handleClick = () => {
 
 	document.head.appendChild(script);
 };
-
-shareBtn.addEventListener('click', handleClick);
+handleLoadMap()
+shareBtn.addEventListener('click', handleLoadMap);
