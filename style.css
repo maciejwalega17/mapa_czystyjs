@@ -53,3 +53,8 @@ h1 {
 .share:hover {
     box-shadow: 0 0 10px var(--second-color);
 }
+
+.map {
+    background-color: #fff;
+    height: 500px; width: 500px;
+}
