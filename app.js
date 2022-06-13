@@ -9,3 +9,5 @@
 // Nice to haves:
 // sharing your realtime location, you will have to save it and read it every few seconds from an external database (ex. Firebase)
 // displaying the realtime location of your friend when he accesses the page
+
+const KEY = AIzaSyCe1ODd - Y87NWxGnrr_dMXat0N1mk9RYis;
