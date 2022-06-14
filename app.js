@@ -56,5 +56,16 @@ const handleLoadMap = () => {
 
 	document.head.appendChild(script);
 };
+
+
+//rest
+
+const handleClick = () => {
+    const cordLinkStart = `https://www.google.com/maps/search/?api=1&query=`
+    const cordLinkEnd = latitude + ',' + longitude
+    const finalLink = cordLinkStart + cordLinkEnd
+    console.log(finalLink);
+}
+
 handleLoadMap()
-shareBtn.addEventListener('click', handleLoadMap);
+shareBtn.addEventListener('click', handleClick);
