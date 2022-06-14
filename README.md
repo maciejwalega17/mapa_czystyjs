@@ -20,4 +20,6 @@ Alternative to it could be using the google maps API for getting the location to
 
 The API key is restricted to work only on github adress.
 
+If not working check if yo uagreed to share your location and if the adblock addon is bot blocking the scripts.
+
 You can see the app on https://maciejwalega17.github.io/mapa_czystyjs/
