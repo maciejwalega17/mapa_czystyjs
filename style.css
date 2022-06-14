@@ -73,6 +73,7 @@ h1 {
 	transform: translate(-50%, -50%);
 	padding: 20px;
 	width: 700px;
+    height: 190px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -90,6 +91,14 @@ h1 {
 .pop-up-btn:hover {
 	box-shadow: 0 0 10px var(--first-color);
 }
+
+.check {
+    position: absolute;
+    top: 77px;
+	color: greenyellow;
+    display: none;
+}
+
 
 .link-input {
 	width: 90%;
@@ -116,13 +125,13 @@ input:focus {
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
 }
-footer{
-  margin-top:auto; 
+footer {
+	margin-top: auto;
 }
 
 .foot {
 	height: 50px;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-end;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: flex-end;
 }

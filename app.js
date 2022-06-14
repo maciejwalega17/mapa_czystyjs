@@ -1,10 +1,10 @@
-
-
 const shareBtn = document.querySelector('.share');
 const closeBtn = document.querySelector('.close');
 const copyBtn = document.querySelector('.copy');
+
 const input = document.querySelector('.link-input');
 const popUp = document.querySelector('.shadow');
+const check = document.querySelector('.check');
 
 const KEY = 'AIzaSyCe1ODd-Y87NWxGnrr_dMXat0N1mk9RYis';
 
@@ -62,10 +62,12 @@ const createLink = () => {
 
 const showPopUp = () => {
 	popUp.style.display = 'flex';
+    check.style.display = 'none';
 };
 
 const closePopUp = () => {
 	popUp.style.display = 'none';
+	check.style.display = 'none';
 };
 
 const handleClick = () => {
@@ -77,6 +79,7 @@ const copyToClipboard = () => {
 	input.select();
 	input.setSelectionRange(0, 99999);
 	navigator.clipboard.writeText(input.value);
+	check.style.display = 'inline';
 };
 
 handleLoadMap();
