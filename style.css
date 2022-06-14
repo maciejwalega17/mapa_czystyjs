@@ -11,7 +11,9 @@
 }
 
 body {
-	height: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	color: var(--third-color);
 	background: url(./world.jpg) no-repeat center center fixed;
@@ -109,8 +111,18 @@ input:focus {
 	position: absolute;
 	top: 0;
 	left: 0;
-    display: none;
+	display: none;
 	height: 100%;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
+}
+footer{
+  margin-top:auto; 
+}
+
+.foot {
+	height: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
 }
