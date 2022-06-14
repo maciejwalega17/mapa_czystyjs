@@ -14,7 +14,7 @@ const shareBtn = document.querySelector('.share');
 const closeBtn = document.querySelector('.close');
 const copyBtn = document.querySelector('.copy');
 const input = document.querySelector('.link-imput');
-const popUp = document.querySelector('.pop-up');
+const popUp = document.querySelector('.shadow');
 
 const KEY = 'AIzaSyCe1ODd-Y87NWxGnrr_dMXat0N1mk9RYis';
 
