@@ -7,14 +7,15 @@
 :root {
 	--first-color: rgb(47, 157, 165);
 	--second-color: rgb(18, 32, 70);
-	--border-color: rgba(255, 255, 255, 0.616);
+	--third-color: rgba(255, 255, 255, 0.973);
 }
 
 body {
-	min-height: 100vh;
+	height: 100%;
 	font-family: 'Montserrat', sans-serif;
-	color: var(--second-color);
-	background-color: var(--first-color);
+	color: var(--third-color);
+    background: url(./world.jpg) no-repeat center center fixed; 
+    background-size: cover;
 }
 
 header {
@@ -36,16 +37,16 @@ h1 {
 	flex-direction: column;
 	align-items: center;
 }
-.share {
+.btn {
 	width: 200px;
     margin: 20px;
 	padding: 10px;
-	border: 3px solid var(--border-color);
+	border: 3px solid var(--third-color);
 	border-radius: 25px;
 	background: none;
     text-align: center;
     font-weight: bold;
-    color: var(--border-color);
+    color: var(--third-color);
     transition: box-shadow 0.3s;
     cursor: pointer;
 }
@@ -57,4 +58,49 @@ h1 {
 .map {
     background-color: #fff;
     height: 500px; width: 500px;
+    border: 2px solid var(--second-color);
+    border-radius: 15px;
+    box-shadow: 0 0 5px var(--second-color);
+}
+
+.pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--second-color);
+    border: 1px solid var(--third-color);
+    border-radius: 25px;
+    box-shadow: 0 0 15px;
+}
+
+.pop-up-btn {
+    width: 150px;
+    margin: 5px;
+}
+
+.pop-up-btn:hover {
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+.link-input {
+    width: 90%;
+    height: 30px;
+    margin: 5px;
+    padding: 0 10px 0 10px;
+    background: none;
+    border: 2px solid var(--third-color);
+    border-radius: 5px;
+    color: white;
+    
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--first-color);
 }
