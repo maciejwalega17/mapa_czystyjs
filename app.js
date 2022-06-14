@@ -11,6 +11,10 @@
 // displaying the realtime location of your friend when he accesses the page
 
 const shareBtn = document.querySelector('.share');
+const closeBtn = document.querySelector('.close');
+const copyBtn = document.querySelector('.copy');
+const input = document.querySelector('.link-imput');
+const popUp = document.querySelector('.pop-up');
 
 const KEY = 'AIzaSyCe1ODd-Y87NWxGnrr_dMXat0N1mk9RYis';
 
@@ -67,5 +71,19 @@ const handleClick = () => {
     console.log(finalLink);
 }
 
+
+
+const showPopUp = () => {
+    popUp.style.display = 'flex';
+}
+
+const closePopUp = () => {
+    popUp.style.display = 'none';
+}
+
+
+
+
 handleLoadMap()
-shareBtn.addEventListener('click', handleClick);
+shareBtn.addEventListener('click', showPopUp);
+closeBtn.addEventListener('click', closePopUp);
