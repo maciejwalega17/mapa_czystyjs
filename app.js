@@ -61,32 +61,35 @@ const handleLoadMap = () => {
 	document.head.appendChild(script);
 };
 
-
 //rest
 
 const createLink = () => {
-    const cordLinkStart = `https://www.google.com/maps/search/?api=1&query=`
-    const cordLinkEnd = latitude + ',' + longitude
-    const finalLink = cordLinkStart + cordLinkEnd
-    input.value = finalLink
-}
-
-
+	const cordLinkStart = `https://www.google.com/maps/search/?api=1&query=`;
+	const cordLinkEnd = latitude + ',' + longitude;
+	const finalLink = cordLinkStart + cordLinkEnd;
+	input.value = finalLink;
+};
 
 const showPopUp = () => {
-    popUp.style.display = 'flex';
-}
+	popUp.style.display = 'flex';
+};
 
 const closePopUp = () => {
-    popUp.style.display = 'none';
-}
+	popUp.style.display = 'none';
+};
 
 const handleClick = () => {
-    createLink();
-    showPopUp();
-}
+	createLink();
+	showPopUp();
+};
 
+const copyToClipboard = () => {
+	input.select();
+	input.setSelectionRange(0, 99999);
+	navigator.clipboard.writeText(input.value);
+};
 
-handleLoadMap()
+handleLoadMap();
 shareBtn.addEventListener('click', handleClick);
+copyBtn.addEventListener('click', copyToClipboard);
 closeBtn.addEventListener('click', closePopUp);
