@@ -13,7 +13,7 @@
 const shareBtn = document.querySelector('.share');
 const closeBtn = document.querySelector('.close');
 const copyBtn = document.querySelector('.copy');
-const input = document.querySelector('.link-imput');
+const input = document.querySelector('.link-input');
 const popUp = document.querySelector('.shadow');
 
 const KEY = 'AIzaSyCe1ODd-Y87NWxGnrr_dMXat0N1mk9RYis';
@@ -64,11 +64,11 @@ const handleLoadMap = () => {
 
 //rest
 
-const handleClick = () => {
+const createLink = () => {
     const cordLinkStart = `https://www.google.com/maps/search/?api=1&query=`
     const cordLinkEnd = latitude + ',' + longitude
     const finalLink = cordLinkStart + cordLinkEnd
-    console.log(finalLink);
+    input.value = finalLink
 }
 
 
@@ -81,9 +81,12 @@ const closePopUp = () => {
     popUp.style.display = 'none';
 }
 
-
+const handleClick = () => {
+    createLink();
+    showPopUp();
+}
 
 
 handleLoadMap()
-shareBtn.addEventListener('click', showPopUp);
+shareBtn.addEventListener('click', handleClick);
 closeBtn.addEventListener('click', closePopUp);
