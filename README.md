@@ -18,4 +18,6 @@ The location might not be precise, it uses navigator.geolocation.getCurrentPosit
 It seems to work better on phones.
 Alternative to it could be using the google maps API for getting the location too, might add that branch in future too.
 
+The API key is restricted to work only on github adress.
+
 You can see the app on https://maciejwalega17.github.io/mapa_czystyjs/
