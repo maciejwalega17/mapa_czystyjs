@@ -8,8 +8,7 @@ const check = document.querySelector('.check');
 
 const KEY = 'AIzaSyCe1ODd-Y87NWxGnrr_dMXat0N1mk9RYis';
 
-let latitude;
-let longitude;
+
 
 //stuff needed for navigator to work
 const errorHandler = (err) => {
@@ -19,20 +18,10 @@ const errorHandler = (err) => {
 };
 
 const showLocation = (data) => {
-	latitude = data.coords.latitude;
-	longitude = data.coords.longitude;
+	const latitude = data.coords.latitude;
+	const longitude = data.coords.longitude;
 	console.log(latitude);
 	console.log(longitude);
-};
-
-const options = { timeout: 30000, enableHighAccuracy: true };
-const getLocation = () => {
-	navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
-};
-
-//stuff from google maps api
-const handleLoadMap = () => {
-	getLocation();
 	let script = document.createElement('script');
 	script.src = `https://maps.googleapis.com/maps/api/js?key=${KEY}&callback=initMap`;
 	script.async = true;
@@ -49,6 +38,12 @@ const handleLoadMap = () => {
 	};
 
 	document.head.appendChild(script);
+
+};
+
+const options = { timeout: 30000, enableHighAccuracy: true };
+const getLocation = () => {
+	navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
 };
 
 //rest
@@ -62,7 +57,7 @@ const createLink = () => {
 
 const showPopUp = () => {
 	popUp.style.display = 'flex';
-    check.style.display = 'none';
+	check.style.display = 'none';
 };
 
 const closePopUp = () => {
@@ -82,7 +77,7 @@ const copyToClipboard = () => {
 	check.style.display = 'inline';
 };
 
-handleLoadMap();
+getLocation();
 shareBtn.addEventListener('click', handleClick);
 copyBtn.addEventListener('click', copyToClipboard);
 closeBtn.addEventListener('click', closePopUp);
